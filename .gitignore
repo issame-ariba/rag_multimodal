@@ -1,0 +1,46 @@
+# Environnements Python et caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.agents/
+.claude/
+
+# Secrets et configuration locale
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Fichiers temporaires, journaux et bases locales
+*.log
+*.tmp
+*.temp
+*.sqlite
+*.sqlite3
+*.db
+
+# Données du document et artefacts dérivés ou générés
+/data/
+/resultats_pdf/
+/chroma_pdf/
+/storage/
+/requetes/
+/sorties/
+
+# Modèles et binaires générés
+*.pt
+*.pth
+*.safetensors
+*.onnx
+*.bin
+
+# Fichiers système
+Thumbs.db
+Desktop.ini

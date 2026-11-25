@@ -1,0 +1,13 @@
+pymupdf
+open-clip-torch
+torch
+pillow
+chromadb
+langchain-core
+langchain-text-splitters
+langchain-ollama
+ollama
+langgraph
+streamlit
+llama-index
+llama-index-embeddings-huggingface
