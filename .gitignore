@@ -18,28 +18,16 @@ __pycache__/
 *.pem
 *.key
 
-# Fichiers temporaires, journaux et bases locales
+# Fichiers temporaires et journaux
 *.log
 *.tmp
 *.temp
-*.sqlite
-*.sqlite3
-*.db
-
-# Données du document et artefacts dérivés ou générés
-/data/
-/resultats_pdf/
-/chroma_pdf/
-/storage/
-/requetes/
-/sorties/
 
 # Modèles et binaires générés
 *.pt
 *.pth
 *.safetensors
 *.onnx
-*.bin
 
 # Fichiers système
 Thumbs.db

@@ -4,7 +4,7 @@ Application locale de recherche augmentée par récupération (RAG) qui indexe e
 
 Le projet comprend également une première chaîne de RAG textuel fondée sur LlamaIndex et un modèle d'embeddings BGE. Les deux chaînes sont décrites séparément dans ce rapport.
 
-> **Données de démonstration et droits de diffusion** — Le PDF présent dans l'environnement de développement est *Attention Is All You Need*, ainsi que ses extractions, figures, requêtes d'exemple et index calculés. Le dépôt ne redistribue pas ces ressources. Avant de les partager, obtenir et respecter les autorisations applicables. Pour exécuter le parcours multimodal, fournir localement le PDF à l'emplacement indiqué dans [Installation et configuration](#10-installation-et-configuration) ; le code et les sorties générées restent utilisables sans les versionner.
+> **Données de démonstration et droits de diffusion** — Cette publication inclut le PDF de démonstration *Attention Is All You Need*, ses extractions, figures, requêtes d'exemple et index calculés. Leur redistribution doit être couverte par les autorisations applicables. Le dossier `.venv`, les caches et les secrets locaux ne sont pas inclus.
 
 ## Table des matières
 
@@ -154,7 +154,7 @@ rag_multimodal/
 ├── .gitignore
 ├── README.md
 ├── requirements.txt
-├── data/                       # PDF d'entrée local, non versionné
+├── data/                       # PDF de démonstration
 ├── src/
 │   ├── indexation.py            # chaîne textuelle LlamaIndex
 │   ├── lecture_pdf.py           # lecture textuelle LlamaIndex
@@ -169,14 +169,14 @@ rag_multimodal/
 │       ├── main.py
 │       ├── recherche.py
 │       └── tests_agent.py
-├── chroma_pdf/                  # index Chroma généré, non versionné
-├── resultats_pdf/               # extractions générées, non versionnées
-├── requetes/                    # images de requête locales, non versionnées
+├── chroma_pdf/                  # index Chroma généré
+├── resultats_pdf/               # extractions générées
+├── requetes/                    # images de requête
 ├── sorties/                     # démonstrations et rapports générés
-└── storage/                     # index LlamaIndex généré, non versionné
+└── storage/                     # index LlamaIndex généré
 ```
 
-Les quatre derniers dossiers de données et de résultats ne sont pas inclus dans le dépôt. Ils sont créés ou remplis localement au fil de l'exécution ; le PDF d'entrée doit être fourni séparément.
+Les dossiers de données, extractions, requêtes et index présents dans l'environnement de développement sont inclus dans cette publication. Ils peuvent être régénérés à partir du PDF et des commandes ci-dessous.
 
 ## 10. Installation et configuration
 
@@ -201,13 +201,13 @@ Installer et démarrer [Ollama](https://ollama.com/), puis récupérer le modèl
 ollama pull qwen3:14b
 ```
 
-Placer une copie du PDF autorisée à l'usage dans :
+Le dépôt contient le PDF utilisé par la configuration par défaut :
 
 ```text
 data\Attention is all you need.pdf
 ```
 
-Le nom et le chemin par défaut sont définis par `PDF_PATH` dans `src/multimodal/config.py`. Le parcours textuel secondaire lit les fichiers PDF présents dans `data/`.
+Le nom et le chemin par défaut sont définis par `PDF_PATH` dans `src/multimodal/config.py`. Pour traiter un autre document, remplacez le PDF local et respectez les droits de diffusion correspondants ; le parcours textuel secondaire lit les fichiers PDF présents dans `data/`.
 
 Au premier lancement, OpenCLIP peut télécharger les poids pré-entraînés. Le code désactive le téléchargement Xet et peut activer le mode hors ligne si ces poids existent déjà dans le cache Hugging Face de l'utilisateur.
 
